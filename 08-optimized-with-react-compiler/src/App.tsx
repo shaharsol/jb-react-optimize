@@ -1,7 +1,7 @@
 import { memo, useCallback, useState } from 'react';
 import './App.css'
 
-// const CachedSlowComponent = memo(SlowComponent)
+const CachedSlowComponent = memo(SlowComponent)
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
 
       <button onClick={changeState}>change state</button>
       {Array.from({ length: 10 }, (_, i) => (
-          <SlowComponent
+          <CachedSlowComponent
             key={i}
             index={i}
             changeState={changeAnotherState}
